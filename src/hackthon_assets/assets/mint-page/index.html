@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png">
+    <title>Love in Cyber</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <img className="logo" src="../../assets/mint-page/img/logo.png" alt="">
+
+    <div className="container">
+        <div className="card">
+
+
+
+            <!-- =============================================================================================== -->
+            <!-- ===================================   page1 - mint   ========================================== -->
+            <!-- =============================================================================================== -->
+            <div className="content">
+                <h2>Hello, </h2>
+                <h2 className="h2-font">Nate!</h2>
+                <div className="bottom-line"></div>
+                <div className="before-text">Leave your romantic <b>Love Message</b>.</div>
+                <div className="love-message-wrapper">
+
+                    <div className="textarea">
+                        <textarea className="love-text" placeholder="Type love message..." cols="15"
+                            rows="27"></textarea>
+                    </div>
+
+                    <div className="NFT-wrapper">
+                        <div className="own-wrapper">
+
+                            <svg viewBox="0 0 32 32" id="heart">
+                                <path id="heart-path" d="M16,28.261c0,0-14-7.926-14-17.046c0-9.356,13.159-10.399,14-0.454c1.011-9.938,14-8.903,14,0.454
+                                C30,20.335,16,28.261,16,28.261z" />
+                            </svg>
+
+                            <div className="own">
+                                <div className="own-title">
+                                    <!-- 加空格是因为样式用了居中布局，居中之后加空格让文字左对齐，如果用左对齐的话整个文本都左对齐了 -->
+                                    LOVE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                                    LOCKED
+                                </div>
+                                <div className="own-img">
+                                    <img width="75em" src="../../assets/mint-page/img/2nd-wallet-profile.png" alt=" ">
+                                </div>
+                                <div className="own-address">0xdscw...6c0sfw</div>
+                                <div className="own-name"><strong>JANE</strong></div>
+                            </div>
+                        </div>
+                        <div className="NFT">
+                            <div className="NFT-title">MY&nbsp;&nbsp;&nbsp;<br>NFTs</div>
+                            <div className="NFT-content">
+                                <button>I want add NFT</button>
+                                <button onclick="noNFT()">I don't need NFT</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- sub按钮 -->
+                <a className="btn-submit" onclick="switchover()" href="#">Submit</a>
+            </div>
+
+
+
+            <!-- ================================================================================================= -->
+            <!-- ==================================   page2 - contract   ========================================= -->
+            <!-- ================================================================================================= -->
+            <div className="content-2">
+                <h2>Congratulations!</h2>
+                <div className="bottom-line"></div>
+                <div className="before-text">Your <b>Lovelocked</b> in blockchain.</div>
+                <img className="three-heart" src="../../assets/mint-page/img/3heart.png" alt="">
+                <div className="contract-wrapper" id="wrapper-hover">
+                    <div className="text-box">
+                        <div className="show-NFT">
+                            <img src="../assets/mint-page/../../assets/mint-page/img/ring-nft.png" alt="">
+                        </div>
+                        <div className="right-box">
+                            <div className="share-btn">
+                                <a href="#">
+                                    <img src="../assets/mint-page/../../assets/mint-page/img/share.png" alt="">
+                                </a>
+                            </div>
+                            <div className="text">
+                                “ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mauris et in turpis quis
+                                in. ”
+                            </div>
+                            <div className="date">
+                                <img src="../assets/mint-page/../../assets/mint-page/img/date.png" alt="">
+                                <span>520days</span>
+                            </div>
+                            <div className="money">
+                                10$
+                            </div>
+                        </div>
+                    </div>
+                    <div className="contract-img">
+                        <img style="width: 17%;" src="../../assets/mint-page/img/profile-foto.png" alt="">
+                        <img style="width: 17%;" src="../../assets/mint-page/img/heart-arrow.png" alt="">
+                        <img style="width: 17%;" src="../../assets/mint-page/img/2nd-wallet-profile.png" alt="">
+                    </div>
+                    <div className="contract-name">
+                        <div className="address-owner">Vitalik.eth</div>
+                        <div className="address-lover">0xdscw...6c0sfw</div>
+                    </div>
+                    <div className="contract-name">
+                        <div className="name-owner">NATE</div>
+                        <div className="name-lover">JANE</div>
+                    </div>
+                    <div className="bottom-address-wrapper">
+                        <div className="bottom-address">
+                            Record: 0x56cc...b3eab4
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Nov.2nd.2022
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 右上角下拉菜单 -->
+        <div className="draft-profile-wrapper">
+            <div className="draft-profile">
+                <img className="draft-img" width="43px" src="../../assets/mint-page/img/profile-foto.png" alt=" ">
+                <div className="draft-name">
+
+                    <div>
+                        Vitalik.eth
+                        <br><br>
+                    </div>
+                    <img width="25px" src="../../assets/mint-page/img/DownArrow.png">
+
+                    <ul className="draft-ul">
+                        <li className="draft-li"><img src="../../assets/mint-page/img/LikeMessage.png" alt=" ">
+                            &nbsp;&nbsp; Send message</li>
+                        <li className="draft-li"><img src="../../assets/mint-page/img/Ring.png" alt=" "> &nbsp;&nbsp;
+                            The ring shop</li>
+                        <li className="draft-li"><img src="../../assets/mint-page/img/Prize.png" alt=" "> &nbsp;&nbsp;
+                            Ranking</li>
+                        <li className="draft-li"><img src="../../assets/mint-page/img/User.png" alt=" "> &nbsp;&nbsp;
+                            Profile</li>
+                        <li className="draft-li"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sign off</li>
+                    </ul>
+
+                </div>
+            </div>
+            <div className="notice">
+                <a href="#">
+                    <img src="../../assets/mint-page/img/Vector.png" alt="">
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <canvas id="confetti"></canvas> -->
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1400 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@200;300;400;500;600;700;800;900&display=swap');
+
+#mint-page {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: linear-gradient(77deg, #e0867ade, #EA7979);
+}
+
+.logo {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    width: 20%;
+}
+
+.container {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-image: url(img/big-back.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+/* 背景弥散圆圈 */
+/* body::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #DD5946;
+    clip-path: circle(7% at 23% 33%);
+    z-index: 1;
+}
+body::after{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #DD5946;
+    clip-path: circle(9% at 30% 83%);
+}
+.container::before{
+    content: '';
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #DD5946;
+    clip-path: circle(9% at 5% 73%);
+}
+.container::after{
+    content: '';
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #FDC5DA;
+    clip-path: circle(9% at 7% 33%);
+}
+html::before{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #FFC387;
+    clip-path: circle(15% at 12% 10%);
+}
+html::after{
+    content: '';
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #FDC5DA;
+    clip-path: circle(12% at 17% 80%);
+} */
+.container .card {
+    position: relative;
+    width: 71%;
+    height: 100vh;
+    border-radius: 0 50px 50px 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 3px 3px 27px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: rgba(255, 255, 255, 0.5) 1px solid;
+    border-left: rgba(255, 255, 255, 0.5) 1px solid;
+    backdrop-filter: blur(7px);
+    /* 调整圆圈模糊度 */
+    box-sizing: border-box;
+}
+
+.content {
+    width: 60%;
+    text-align: center;
+    transition: 0.5s;
+    transform: translateY(150px);
+    opacity: 0;
+    box-sizing: border-box;
+}
+
+.contentup {
+    transform: translateY(0px);
+    opacity: 1;
+    margin-left: 7%;
+}
+
+.switchoverDisplay {
+    transform: translateY(-150px);
+    opacity: 0;
+}
+
+.container .card .content h2 {
+    font-size: 3em;
+    color: #fff;
+    pointer-events: none;
+    text-align: left;
+    font-weight: 700;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.container .card .content .h2-font {
+    font-weight: 500;
+    font-size: 2.3em;
+    font-family: 'Lexend', sans-serif;
+    padding-top: 0.1em;
+    padding-bottom: 0.5em;
+    box-sizing: border-box;
+}
+
+/* 半透明线 */
+.bottom-line {
+    width: 13em;
+    height: 2.5px;
+    border: 0px;
+    background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(255, 255, 255, 1));
+    box-sizing: border-box;
+}
+
+/* 上边的一句话 */
+.container .card .content .before-text {
+    font-size: 17px;
+    font-weight: 300;
+    font-family: 'Lexend', sans-serif;
+    color: #fff;
+    pointer-events: none;
+    padding-top: 6%;
+    padding-bottom: 3%;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+/* 中间文本框内容 */
+.love-message-wrapper {
+    width: 95%;
+    background-color: #fff;
+    border-radius: 0 30px 30px 30px;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+.textarea {
+    width: 73%;
+    box-sizing: border-box;
+}
+
+.love-text {
+    width: 100%;
+    height: 16.7em;
+    border: 0;
+    border-radius: 0 0 0 30px;
+    display: inline-block;
+    text-align: left;
+    padding: 2em 5em 1em 2em;
+    line-height: 1.2em;
+    font-size: 17px;
+    font-family: Arial, sans-serif;
+    opacity: 0.9;
+    resize: none;
+    overflow-y: hidden;
+    float: left;
+    box-sizing: border-box;
+}
+
+.love-text:focus {
+    outline: none;
+    border: 0;
+}
+
+.container .card .content .NFT-wrapper {
+    width: 27%;
+    display: inline-block;
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+
+.container .card .content .NFT-wrapper .own-wrapper {
+    width: 100%;
+    height: 20em;
+    display: inline-block;
+    border-radius: 30px;
+    position: relative;
+    z-index: 2;
+    background-image: linear-gradient(133deg, rgb(249 240 240), #FE7060);
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+.container .card .content .NFT-wrapper .own {
+    height: 100%;
+    position: relative;
+    z-index: 3;
+    border: #FDC5DA 2px solid;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(247, 90, 90, 0.1);
+    box-sizing: border-box;
+}
+
+svg#heart {
+    height: 57%;
+    position: absolute;
+    top: 30%;
+    right: 3%;
+    box-sizing: border-box;
+}
+
+#heart-path {
+    fill: none;
+    stroke: red;
+    stroke-width: 1px;
+    stroke-linecap: butt;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 125;
+    box-sizing: border-box;
+}
+
+.container .card .content .NFT-wrapper .NFT {
+    width: 13em;
+    height: 20em;
+    border-radius: 30px;
+    display: inline-block;
+    position: absolute;
+    right: 4.1em;
+    z-index: 1;
+    background-image: linear-gradient(133deg, rgb(249 240 240), #FE7060);
+    border: #fcdce8 2px solid;
+    box-sizing: border-box;
+}
+
+.container .card .content .NFT-wrapper:hover .NFT {
+    animation: NFT-to-right 1.7s;
+    right: 11em;
+    box-sizing: border-box;
+}
+
+.own-title {
+    font-size: 1.1em;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    color: #F68F8C;
+    padding: 30px 20px 25px 20px;
+    box-sizing: border-box;
+}
+
+.own-img img {
+    width: 5em;
+    height: 5em;
+    border: #fff 5px solid;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 1.1em;
+    box-sizing: border-box;
+}
+
+.own-address {
+    color: #fff;
+    font-size: 0.8em;
+    font-family: 'Lexend', sans-serif;
+    box-sizing: border-box;
+}
+
+.own-name {
+    color: #fff;
+    font-size: 0.8em;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 800;
+    box-sizing: border-box;
+}
+
+.NFT-title {
+    font-size: 1.1em;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 800;
+    text-align: center;
+    color: #F68F8C;
+    padding: 30px 20px 20px 30px;
+    box-sizing: border-box;
+}
+
+@keyframes NFT-to-right {
+    0% {
+        right: 4.1em;
+    }
+
+    100% {
+        right: 11em;
+    }
+}
+
+.NFT-content {
+    width: 100%;
+    height: 67%;
+    box-sizing: border-box;
+}
+
+.NFT-content button {
+    width: 60%;
+    height: 27px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #66160D;
+    border: #fcdce8;
+    background-color: #f29491;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5%;
+    box-sizing: border-box;
+}
+
+/* sub按钮 */
+.container .card .content .btn-submit {
+    width: 8em;
+    line-height: 27px;
+    margin-top: 7%;
+    margin-right: 5%;
+    display: inline-block;
+    color: rgb(80, 15, 61);
+    background: linear-gradient(to right, rgb(241 233 233) 1%, rgb(237 182 182) 27%);
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 500;
+    font-family: 'Lexend', sans-serif;
+    border-radius: 15px;
+    padding: 8px 10px;
+    box-shadow: 0 5px 15px rgb(0 0 0 / 50%);
+    float: right;
+    cursor: pointer;
+    transition: 0.7s ease;
+    box-sizing: border-box;
+}
+
+.container .card .content .btn-submit:active {
+    background: linear-gradient(to right, rgb(242, 189, 189) 1%, rgb(235, 169, 169) 27%);
+}
+
+.container .card .content .btn-submit:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* 还没有清除浮动！ */
+
+@media screen and (max-width: 1817px) {
+    .love-text {
+        padding: 2em 5em 1em 2em;
+    }
+
+    .container .card .content .NFT-wrapper .NFT {
+        width: 12em;
+        right: 8.7%;
+    }
+
+    .container .card .content .NFT-wrapper:hover .NFT {
+        animation: NFT-to-right 1.7s;
+        right: calc(37% - 8.7%);
+    }
+
+    @keyframes NFT-to-right {
+        0% {
+            right: 8.7%;
+        }
+
+        100% {
+            right: calc(37% - 8.7%);
+        }
+    }
+
+    svg#heart {
+        right: 1%;
+    }
+}
+
+@media screen and (max-width: 1677px) {
+    .container .card .content .NFT-wrapper .NFT {
+        width: 12em;
+        right: 8.7%;
+    }
+
+    .container .card .content .NFT-wrapper:hover .NFT {
+        animation: NFT-to-right 1.7s;
+        right: calc(37% - 8.7%);
+    }
+
+    @keyframes NFT-to-right {
+        0% {
+            right: 8.7%;
+        }
+
+        100% {
+            right: calc(37% - 8.7%);
+        }
+    }
+
+    svg#heart {
+        height: 50%;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .container .card {
+        width: 73%;
+    }
+
+    .container .card .content {
+        width: 63%;
+    }
+
+    svg#heart {
+        height: 46%;
+    }
+}
+
+@media screen and (max-width: 1410px) {
+    .container .card {
+        width: 75%;
+    }
+
+    .container .card .content {
+        width: 65%;
+    }
+
+    .container .card .content h2 {
+        font-size: 2.7em;
+    }
+
+    .container .card .content .h2-font {
+        font-size: 2em;
+        padding-top: 0;
+        padding-bottom: 0.3em;
+    }
+
+    .container .card .content .NFT-wrapper .NFT {
+        width: 11.5em;
+    }
+
+    .love-text {
+        padding: 2em 3em 1em 2em;
+    }
+
+    .container .card .content .btn-submit {
+        width: 8em;
+        line-height: 33px;
+        margin-top: 6%;
+        font-size: 23px;
+        padding: 5px 7px;
+    }
+
+    svg#heart {
+        height: 43%;
+    }
+}
+
+@media screen and (max-width: 1320px) {
+    .container .card {
+        width: 75%;
+    }
+
+    .container .card .content {
+        width: 65%;
+    }
+
+    .love-text {
+        padding: 1em 3.5em 1em 1em;
+    }
+
+    .container .card .content .btn-submit {
+        width: 7.7em;
+        line-height: 32px;
+        margin-top: 5%;
+        font-size: 23px;
+        border-radius: 15px;
+        padding: 5px 7px;
+    }
+
+    svg#heart {
+        height: 35%;
+    }
+
+}
+
+@media screen and (max-width: 1230px) {
+    .container .card .content .NFT-wrapper .NFT {
+        width: 10.5em;
+    }
+}
+
+@media screen and (max-width: 1099px) {
+    .container .card .content .NFT-wrapper .NFT {
+        width: 8em;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .container .card {
+        width: 77%;
+    }
+
+    .container .card .content {
+        width: 77%;
+    }
+
+    .container .card .content .NFT-wrapper .NFT {
+        width: 9em;
+    }
+
+    svg#heart {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .container .card .content .NFT-wrapper .NFT {
+        width: 6em;
+    }
+}
+
+@media screen and (max-height: 730px) {
+    .container .card .content .before-text {
+        font-size: 19px;
+        padding-top: 7%;
+        padding-bottom: 3%;
+    }
+
+    .container .card .content .btn-submit {
+        width: 8em;
+        margin-top: 3%;
+    }
+
+    .container .card .content .NFT-wrapper .NFT {
+        width: 11em;
+    }
+}
+
+@media screen and (max-height: 660px) {
+    .container .card .content .before-text {
+        font-size: 19px;
+        padding-top: 5%;
+        padding-bottom: 2%;
+    }
+
+    .container .card .content .btn-submit {
+        width: 7em;
+        line-height: 30px;
+        margin-top: 2%;
+        font-size: 20px;
+        padding: 5px 7px;
+    }
+
+    .container .card .content .NFT-wrapper .NFT {
+        right: 8.7%;
+        width: 11em;
+    }
+
+    .container .card .content .NFT-wrapper:hover .NFT {
+        animation: NFT-to-right 1.7s;
+        right: calc(37% - 8.7%);
+    }
+
+    @keyframes NFT-to-right {
+        0% {
+            right: 8.7%;
+        }
+
+        100% {
+            right: calc(37% - 8.7%);
+        }
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .container .card .content h2 {
+        font-size: 2.5em;
+    }
+
+    .container .card .content .h2-font {
+        font-size: 1.7em;
+        padding-top: 0.1em;
+        padding-bottom: 0.4em;
+    }
+
+    .container .card .content .before-text {
+        font-size: 17px;
+        padding-top: 5%;
+        padding-bottom: 2%;
+    }
+
+    .container .card .content .NFT-wrapper {
+        height: 19em;
+    }
+
+    .container .card .content .NFT-wrapper .own-wrapper {
+        height: 19em;
+    }
+
+    .container .card .content .NFT-wrapper .NFT {
+        height: 19em;
+    }
+
+    .container .card .content .btn-submit {
+        width: 7em;
+        line-height: 29px;
+        margin-top: 2%;
+        font-size: 19px;
+        padding: 5px 7px;
+    }
+}
+
+/* 右上角下拉菜单 */
+.draft-profile-wrapper {
+    width: 19%;
+    height: 15%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+}
+
+.draft-profile-wrapper .draft-profile {
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.draft-profile-wrapper .draft-profile .draft-name {
+    display: inline-block;
+    color: #fff;
+    font-size: 0.9em;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 800;
+    padding-left: 3px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.draft-profile-wrapper .draft-profile .draft-name div {
+    font-weight: 400;
+    font-size: 15px;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.draft-profile-wrapper .draft-profile .draft-name .draft-ul {
+    width: 15em;
+    color: #66160D;
+    font-size: 1.1em;
+    font-weight: 500;
+    line-height: 2em;
+    background-color: #fff;
+    border-radius: 30px 0 30px 30px;
+    list-style: none;
+    position: absolute;
+    z-index: 10;
+    right: 5%;
+    display: none;
+    cursor: default;
+    padding: 3% 11% 5% 12%;
+    box-sizing: border-box;
+}
+
+.draft-profile-wrapper:hover .draft-profile .draft-name .draft-ul {
+    margin-right: 40%;
+    box-sizing: border-box;
+}
+
+.draft-profile-wrapper .draft-profile:hover .draft-name .draft-ul {
+    display: block;
+    box-sizing: border-box;
+}
+
+.draft-profile-wrapper .draft-profile .draft-name img {
+    margin-bottom: 9%;
+    box-sizing: border-box;
+}
+
+.draft-profile-wrapper .draft-profile .draft-name .draft-ul img {
+    width: 1.7em;
+    margin-top: 1em;
+    margin-bottom: 0;
+    position: relative;
+    top: 0.3em;
+    box-sizing: border-box;
+}
+
+.draft-profile-wrapper .draft-profile .draft-name .draft-li {
+    border-bottom: 1px rgba(185, 179, 179, 0.5) solid;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.draft-profile-wrapper .draft-profile .draft-name .draft-li:last-child {
+    border: 0;
+    display: block;
+    padding-top: 0.8em;
+    padding-bottom: 0.7em;
+    box-sizing: border-box;
+}
+
+.draft-profile-wrapper .draft-profile .draft-name .draft-li:hover {
+    border-bottom: #DD5946 3px solid;
+    box-sizing: border-box;
+}
+
+.draft-profile-wrapper .notice {
+    width: 17%;
+    height: 100%;
+    display: inline-block;
+    margin-left: 7%;
+    box-sizing: border-box;
+}
+
+.draft-profile-wrapper .notice img {
+    position: fixed;
+    top: 10%;
+    box-sizing: border-box;
+}
+
+
+
+/* ================================================================================================= */
+/* =======================================   page2 - contract   ==================================== */
+/* ================================================================================================= */
+.content-2 {
+    display: none;
+    transform: translateY(150px);
+    opacity: 0;
+    width: 47%;
+    text-align: left;
+    transition: 0.5s;
+    box-sizing: border-box;
+}
+
+/* 点submit后，用JS把下面这个样式加到content-2里 */
+.content-2-display {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.content-2 h2 {
+    font-size: 2.7em;
+    color: #fff;
+    text-align: left;
+    font-weight: 500;
+    font-family: 'Lexend', sans-serif;
+    padding-bottom: 30px;
+    margin-left: -37%;
+    margin-bottom: 103%;
+    box-sizing: border-box;
+}
+
+.content-2 .bottom-line {
+    position: relative;
+    bottom: 605px;
+    margin-left: -37%;
+    box-sizing: border-box;
+}
+
+.content-2 .before-text {
+    color: #fff;
+    font-family: 'Lexend', sans-serif;
+    text-align: left;
+    font-size: 1em;
+    margin-left: -37%;
+    position: relative;
+    bottom: 550px;
+    box-sizing: border-box;
+}
+
+.content-2 .contract-wrapper {
+    width: 95%;
+    height: 90%;
+    color: #fff;
+    font-family: 'Lexend', sans-serif;
+    border-radius: 45px;
+    box-shadow: 0 3px 25px rgba(0, 0, 0, 0.3);
+    background-color: #efb4b2;
+    background-image: url(img/bck1.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-left: 35%;
+    position: absolute;
+    top: 7%;
+    box-sizing: border-box;
+}
+
+#wrapper-hover {
+    transition: 1s ease;
+    box-sizing: border-box;
+}
+
+#wrapper-hover:hover {
+    transform: scale(1.01);
+    box-shadow: 0px 7px 10px 10px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+.content-2 .three-heart {
+    position: absolute;
+    left: 1%;
+    width: 53%;
+    top: 21%;
+    z-index: -1;
+    box-sizing: border-box;
+}
+
+.content-2 .contract-wrapper .text-box {
+    color: aliceblue;
+    font-size: 1.1em;
+    line-height: 1.5em;
+    height: 53%;
+    font-weight: 700;
+    font-family: 'Lexend', sans-serif;
+    box-sizing: border-box;
+}
+
+.content-2 .contract-wrapper .text-box .show-NFT {
+    display: inline-block;
+    width: 35%;
+    height: 80%;
+    margin: 5% 5% 0 6%;
+    border-radius: 30px;
+    opacity: 0.7;
+    box-shadow: 3px 3px 27px rgba(0, 0, 0, 0.3);
+    background-image: linear-gradient(133deg, #efb4b2, rgb(245, 204, 204));
+    box-sizing: border-box;
+}
+
+.content-2 .contract-wrapper .text-box .show-NFT img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    box-sizing: border-box;
+}
+
+.right-box-noImg {
+    width: 75% !important;
+    margin: 7% 7% 0 10%;
+    float: right;
+    margin-bottom: 0;
+    box-sizing: border-box;
+}
+
+.content-2 .contract-wrapper .text-box .right-box {
+    display: inline-block;
+    width: 47%;
+    box-sizing: border-box;
+}
+
+.content-2 .contract-wrapper .text-box .right-box .share-btn img {
+    float: right;
+    box-sizing: border-box;
+}
+
+.content-2 .contract-wrapper .text-box .right-box .text {
+    width: 92%;
+    height: 177px;
+    font-size: 1.1em;
+    padding-top: 15%;
+    padding-left: 5%;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.content-2 .contract-wrapper .text-box .right-box .date {
+    display: inline-block;
+    margin-top: 7%;
+    margin-left: 30%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.content-2 .contract-wrapper .text-box .right-box .date span {
+    width: 97px;
+    line-height: 25px;
+    font-size: 0.9em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(25%, -50%);
+    box-sizing: border-box;
+}
+
+.content-2 .contract-wrapper .text-box .right-box .money {
+    display: inline-block;
+    font-size: 1.5em;
+    margin-top: 9%;
+    float: right;
+    box-sizing: border-box;
+}
+
+.content-2 .contract-img {
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.content-2 .contract-img img:first-child,
+.content-2 .contract-img img:last-child {
+    border: #F29C99 4px solid;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.content-2 .contract-name {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.content-2 .contract-name .address-owner {
+    width: 30%;
+    display: inline-block;
+    color: #66160D;
+    font-family: 'Lexend', sans-serif;
+    margin-left: 16%;
+    font-size: 1em;
+    text-align: center;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+.content-2 .contract-name .name-owner {
+    width: 30%;
+    display: inline-block;
+    color: #66160D;
+    font-family: 'Lexend', sans-serif;
+    margin-left: 16%;
+    font-size: 1em;
+    text-align: center;
+    font-weight: 700;
+    box-sizing: border-box;
+}
+
+.content-2 .contract-name .name-owner::after {
+    content: '(owner)';
+    color: #66160d97;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 600;
+    box-sizing: border-box;
+}
+
+.content-2 .contract-name .address-lover {
+    width: 30%;
+    display: inline-block;
+    color: #66160D;
+    font-family: 'Lexend', sans-serif;
+    font-size: 1em;
+    margin-left: 6%;
+    font-weight: 500;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.content-2 .contract-name .name-lover {
+    width: 30%;
+    display: inline-block;
+    color: #66160D;
+    font-family: 'Lexend', sans-serif;
+    font-size: 1em;
+    margin-left: 6%;
+    font-weight: 700;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.content-2 .bottom-address-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.content-2 .bottom-address {
+    text-align: center;
+    width: 67%;
+    line-height: 11px;
+    font-size: 0.5em;
+    padding: 5px 27px 5px 27px;
+    border-radius: 10px;
+    background-color: rgba(70, 68, 68, 0.2);
+    margin: 0 auto;
+    margin-top: 25%;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 1980px) {
+    .content-2 .bottom-line {
+        bottom: 650px;
+    }
+
+    .content-2 .before-text {
+        bottom: 595px;
+    }
+
+    .content-2 .contract-wrapper .text-box .right-box .share-btn {
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 1880px) {
+    .content-2 .bottom-address {
+        margin-top: 22%;
+    }
+
+    .content-2 .bottom-line {
+        bottom: 601px;
+    }
+
+    .content-2 .before-text {
+        bottom: 550px;
+    }
+
+    .content-2 .contract-wrapper .text-box .right-box .share-btn {
+        height: 25px;
+    }
+}
+
+@media screen and (max-width: 1720px) {
+    .content-2 .bottom-line {
+        bottom: 585px;
+    }
+
+    .content-2 .contract-wrapper .text-box .right-box .share-btn {
+        height: 0;
+    }
+}
+
+@media screen and (max-width: 1675px) {}
+
+@media screen and (max-width: 1640px) {
+    .content-2 .bottom-address {
+        width: 65%;
+        margin-top: 20%;
+    }
+
+    .content-2 .bottom-line {
+        bottom: 538px;
+    }
+
+    .content-2 .before-text {
+        bottom: 497px;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .content-2 .bottom-line {
+        bottom: 535px;
+    }
+
+    .content-2 .before-text {
+        bottom: 470px;
+    }
+
+    .content-2 .contract-wrapper {
+        margin-left: 40%;
+    }
+}
+
+@media screen and (max-width: 1470px) {
+    .content-2 {
+        width: 53%;
+    }
+
+    .content-2 .bottom-address {
+        width: 77%;
+        margin-top: 18%;
+    }
+
+    .content-2 .before-text {
+        bottom: 490px;
+    }
+
+    .content-2 h2 {
+        font-size: 2.3em;
+        margin-left: -35%;
+        margin-bottom: 95%;
+    }
+}
+
+@media screen and (max-width: 1355px) {
+    .content-2 .bottom-line {
+        bottom: 505px;
+    }
+
+    .content-2 .before-text {
+        bottom: 430px;
+    }
+
+    .content-2 h2 {
+        font-size: 2em;
+        margin-left: -36%;
+        margin-bottom: 115%;
+    }
+
+    .content-2 .bottom-line {
+        bottom: 621px;
+    }
+
+    .content-2 .before-text {
+        bottom: 545px;
+    }
+
+    .content-2 .three-heart {
+        left: 5%;
+        width: 55%;
+    }
+
+    .content-2 .bottom-address {
+        margin-top: 25%;
+    }
+}
+
+@media screen and (max-width: 1320px) {
+    .content-2 .bottom-line {
+        bottom: 600px;
+    }
+}
+
+@media screen and (max-width: 1275px) {
+    .content-2 .bottom-line {
+        bottom: 580px;
+    }
+}
+
+@media screen and (max-width: 1185px) {
+    .content-2 .bottom-line {
+        bottom: 536px;
+    }
+
+    .content-2 .before-text {
+        bottom: 507px;
+    }
+}
+
+@media screen and (max-width: 1137px) {
+    .content-2 {
+        width: 57%;
+    }
+
+    .content-2 .bottom-address {
+        width: 87%;
+    }
+
+    .content-2 .bottom-line {
+        bottom: 534px;
+        margin-left: -23%;
+    }
+
+    .content-2 h2 {
+        margin-left: -26%;
+    }
+
+    .content-2 .before-text {
+        margin-left: -20%;
+    }
+}
+
+@media screen and (max-width: 1017px) {
+    .content-2 {
+        width: 63%;
+    }
+
+    .content-2 .bottom-address {
+        width: 77%;
+    }
+
+    .content-2 .contract-wrapper {
+        margin-left: 35%;
+    }
+
+    .content-2 h2 {
+        font-size: 1.9em;
+        margin-left: -21%;
+    }
+}
+
+@media screen and (max-width: 977px) {
+    .content-2 {
+        width: 53%;
+    }
+
+    .container .card {
+        width: 77%;
+    }
+
+    .content-2 .contract-wrapper {
+        width: 127%;
+    }
+
+    .content-2 .bottom-address {
+        width: 74%;
+        height: 2.5em;
+        margin-top: 12%;
+    }
+
+    .content-2 .contract-name .address-owner {
+        margin-left: 13%;
+    }
+
+    .content-2 .contract-wrapper {
+        margin-left: 0%;
+    }
+
+    .content-2 .contract-wrapper {
+        top: 182px;
+        height: 31em;
+    }
+
+    .content-2 .contract-wrapper .text-box .right-box .text {
+        height: 143px;
+    }
+
+    .content-2 h2 {
+        margin-bottom: 157%;
+    }
+
+    .content-2 .bottom-line {
+        bottom: 606px;
+    }
+
+    .content-2 .before-text {
+        bottom: 580px;
+        margin-left: -21%;
+    }
+
+    .content-2 .three-heart {
+        left: -34%;
+        top: 45%;
+    }
+}
+
+@media screen and (max-width: 917px) {
+    .content-2 .bottom-line {
+        bottom: 583px;
+    }
+
+    .content-2 .three-heart {
+        left: -34%;
+        top: 45%;
+    }
+
+    .content-2 .contract-wrapper .text-box .right-box .share-btn img {
+        margin-top: 5%;
+    }
+}
+
+@media screen and (max-width: 877px) {
+    .content-2 .contract-wrapper {
+        width: 145%;
+        right: -20%;
+        height: 31em;
+        top: 25%;
+    }
+
+    .content-2 h2 {
+        margin-bottom: 170%;
+    }
+
+    .content-2 .bottom-line {
+        bottom: 606px;
+    }
+
+    .content-2 .three-heart {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 824px) {
+    .content-2 .bottom-line {
+        bottom: 567px;
+    }
+
+    .content-2 .before-text {
+        bottom: 534px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .content-2 .bottom-line {
+        bottom: 557px;
+    }
+}
+
+@media screen and (max-width: 777px) {
+    .container .card {
+        width: 80%;
+    }
+
+    .content-2 .contract-wrapper {
+        width: 157%;
+    }
+
+    .content-2 .contract-name .address-owner {
+        margin-left: 17%;
+    }
+
+    .content-2 h2 {
+        margin-bottom: 190%;
+    }
+
+    .content-2 .bottom-line {
+        bottom: 618px;
+    }
+
+    .content-2 .before-text {
+        bottom: 576px;
+        margin-left: -20%;
+    }
+}
+
+@media screen and (max-width: 745px) {
+    .content-2 .bottom-line {
+        display: none;
+    }
+
+    .content-2 .bottom-address {
+        width: 77%;
+        height: 2.5em;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .content-2 .before-text {
+        display: none;
+    }
+
+    .content-2 .contract-wrapper {
+        top: 20%;
+    }
+
+    .content-2 .bottom-address {
+        width: 55%;
+        height: 5em;
+        margin-top: 11%;
+    }
+}
+
+@media (max-height: 600px) and (max-width: 657px) {
+    .content-2 h2 {
+        margin-bottom: 171%;
+    }
+
+    .content-2 .contract-wrapper {
+        top: 12%;
+    }
+}
+
+/* canvas 撒花 id=confetti */
+/* #confetti{
+    position: absolute;
+    top: -100%;
+    z-index: 100;
+    height: 100%;
+    width: 100%;
+} */

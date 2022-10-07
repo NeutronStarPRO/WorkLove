@@ -1,0 +1,7 @@
+[workspace]
+members = [
+
+    "src/rust_backend/user_profile",
+    "src/rust_backend/post_service",
+
+]

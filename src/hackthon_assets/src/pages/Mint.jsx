@@ -158,7 +158,7 @@ function Mint() {
                     <div className='profile-id'>
                         {`${user.substring(0, 6)}...`}
                         <br></br>
-                    </div> */} */
+                    </div> */}
                 {/* <img width="25px" src={downArrow} />
 
                             <ul className="draft-ul">

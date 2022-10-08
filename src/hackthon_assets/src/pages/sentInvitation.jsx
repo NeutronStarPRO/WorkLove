@@ -73,7 +73,7 @@ const SentInvitation = () => {
                         <img className="handOutline" src={handOutline} />
                         <Wrapper>
                             <div><div className="search">
-                                <input type="text" name="q" className="softbox" placeholder="Insert code" onChange={(e) => setCode(e.target.value)} />
+                                <input type="text" name="q" className="softbox" placeholder="Insert invitation code" onChange={(e) => setCode(e.target.value)} />
                                 <button type="submit" className="softbtn" onClick={onSubmit}>
                                     <FiSearch />
                                 </button>

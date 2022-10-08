@@ -8,8 +8,7 @@ const Wrapper = styled.div`
 	transform: translate(-50%, -50%);
 }
   .softbox{
-	font-size: 20px; 
-	margin-bottom:5%;
+	font-size: 20px;
 	opacity:.3;
 	padding: 8px 32px 8px 12px;	height: 62px;
 	border: 2px solid white;

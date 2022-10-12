@@ -19,7 +19,7 @@ function List() {
         const authClient = await AuthClient.create()
         const identity = await authClient.getIdentity()
         // // below should work if deployed live
-        // const authenticatedActor = await Actor.createActor(canisterId, {
+        // const authenticatedActor = await createActor(canisterId, {
         //     agentOptions: { identity, }
         // })
         // const data = await authenticatedActor.getOwnProfile()

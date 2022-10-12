@@ -38,12 +38,12 @@ const SentInvitation = () => {
             // const authenticatedActor = await createActor(canisterId, {
             //     agentOptions: { identity, }
             // })
-            // const newMessage = await authenticatedActor.linkByInvitationCode(code)
+            
             const userActor = await Actor.createActor(idlFactory, {
                 agent,
                 canisterId: userId,
             })
-
+            // const newMessage = await authenticatedActor.linkByInvitationCode(code)
             const newMessage = await userActor.linkByInvitationCode(code)
             // ------------------to be replaced
             const data = await newMessage.Ok

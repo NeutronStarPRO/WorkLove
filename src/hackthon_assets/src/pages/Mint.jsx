@@ -19,7 +19,6 @@ function Mint() {
     const userB = userA.substring(3, 5)
 
 
-
     // ----- to be removed when live
     const userId = Principal.fromText('r7inp-6aaaa-aaaaa-aaabq-cai')
     const localHost = "http://localhost:8080/";
@@ -43,7 +42,6 @@ function Mint() {
             // const authenticatedActor = await createActor(canisterId, {
             //     agentOptions: { identity, }
             // })
-            // const newMessage = await authenticatedActor.getInvitationCode(record)
             const userActor = await Actor.createActor(idlFactory, {
                 agent,
                 canisterId: userId,
@@ -53,6 +51,7 @@ function Mint() {
                 "text": text,
                 "user_other_name": name,
             }
+            // const newMessage = await authenticatedActor.getInvitationCode(record)
             const newMessage = await userActor.getInvitationCode(record)
             const code = await newMessage.Ok
             setCode(code)

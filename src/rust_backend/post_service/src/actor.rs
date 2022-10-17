@@ -63,7 +63,7 @@ fn pre_upgrade() {
             posts,
         };
 
-        storage::stable_save((payload,))
+        storage::stable_save((payload, ))
             .expect("failed to save state data");
 
         print(format!("started pre_upgrade {:?}", canister_id));

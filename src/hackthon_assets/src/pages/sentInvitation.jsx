@@ -24,10 +24,10 @@ const SentInvitation = () => {
         switchover()
     }
 
-    const userId = Principal.fromText('r7inp-6aaaa-aaaaa-aaabq-cai')
-    const localHost = "http://localhost:8080/";
-    const agent = new HttpAgent({ host: localHost });
-    agent.fetchRootKey()
+    // const userId = Principal.fromText('r7inp-6aaaa-aaaaa-aaabq-cai')
+    // const localHost = "http://localhost:8080/";
+    // const agent = new HttpAgent({ host: localHost });
+    // agent.fetchRootKey()
 
     const linkCode = async ({ code }) => {
 
@@ -35,16 +35,16 @@ const SentInvitation = () => {
         const identity = await authClient.getIdentity()
 
         try {
-            // const authenticatedActor = await createActor(canisterId, {
-            //     agentOptions: { identity, }
-            // })
-            
-            const userActor = await Actor.createActor(idlFactory, {
-                agent,
-                canisterId: userId,
+            const authenticatedActor = await createActor(canisterId, {
+                agentOptions: { identity, }
             })
-            // const newMessage = await authenticatedActor.linkByInvitationCode(code)
-            const newMessage = await userActor.linkByInvitationCode(code)
+            
+            // const userActor = await Actor.createActor(idlFactory, {
+            //     agent,
+            //     canisterId: userId,
+            // })
+            const newMessage = await authenticatedActor.linkByInvitationCode(code)
+            // const newMessage = await userActor.linkByInvitationCode(code)
             // ------------------to be replaced
             const data = await newMessage.Ok
             const text = data.text

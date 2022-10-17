@@ -21,7 +21,7 @@ const AppProvider = ({ children }) => {
             const res = await post_service.query_posts(search)
             const messages = res.Ok.data
             setMessages(messages)
-            console.log(messages);
+            // console.log(messages);
         } catch (error) {
             console.log(error);
         }

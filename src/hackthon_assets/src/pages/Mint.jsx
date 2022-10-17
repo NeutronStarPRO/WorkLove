@@ -20,10 +20,10 @@ function Mint() {
 
 
     // ----- to be removed when live
-    const userId = Principal.fromText('r7inp-6aaaa-aaaaa-aaabq-cai')
-    const localHost = "http://localhost:8080/";
-    const agent = new HttpAgent({ host: localHost });
-    agent.fetchRootKey()
+    // const userId = Principal.fromText('r7inp-6aaaa-aaaaa-aaabq-cai')
+    // const localHost = "http://localhost:8080/";
+    // const agent = new HttpAgent({ host: localHost });
+    // agent.fetchRootKey()
     //  --------- to be removed
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -39,20 +39,20 @@ function Mint() {
         const identity = await authClient.getIdentity()
 
         try {
-            // const authenticatedActor = await createActor(canisterId, {
-            //     agentOptions: { identity, }
-            // })
-            const userActor = await Actor.createActor(idlFactory, {
-                agent,
-                canisterId: userId,
+            const authenticatedActor = await createActor(canisterId, {
+                agentOptions: { identity, }
             })
+            // const userActor = await Actor.createActor(idlFactory, {
+            //     agent,
+            //     canisterId: userId,
+            // })
             let record = {
                 "user_other_id": "",
                 "text": text,
                 "user_other_name": name,
             }
-            // const newMessage = await authenticatedActor.getInvitationCode(record)
-            const newMessage = await userActor.getInvitationCode(record)
+            const newMessage = await authenticatedActor.getInvitationCode(record)
+            // const newMessage = await userActor.getInvitationCode(record)
             const code = await newMessage.Ok
             setCode(code)
             // ------------------to be replaced

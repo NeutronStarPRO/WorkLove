@@ -13,6 +13,7 @@
 html {
 	background-image: url(../assets/home-page/assets/bck.jpg);
 	background-size: 100%;
+	overflow-x: hidden !important;
 }
 
 a {
@@ -623,7 +624,7 @@ body {
 
 .chatboard-wrapper .right-box {
 	display: inline-block;
-	width: 43%;
+	width: 46%;
 	height: 70%;
 	background-image: url(../assets/home-page/assets/bck-box.png);
 	background-repeat: no-repeat;
@@ -652,13 +653,13 @@ body {
 	font-weight: 700;
 	font-size: 12px;
 	margin-top: 12%;
-	margin-right: 7px;
+	margin-right: 37px;
 	float: right;
 }
 
 .chatboard .chatboard-wrapper:nth-child(4n + 3) {
 	background-image: url("../assets/home-page/assets/1.png");
-	transform: translateX(-4em);
+	transform: translateX(-5em);
 	background-size: contain;
 	background-repeat: no-repeat;
 	width: 50%;
@@ -667,7 +668,7 @@ body {
 
 .chatboard .chatboard-wrapper:nth-child(4n) {
 	background-image: url("../assets/home-page/assets/2.png");
-	transform: translateX(4em);
+	transform: translateX(5em);
 	background-size: contain;
 	background-repeat: no-repeat;
 	width: 50%;
@@ -676,7 +677,7 @@ body {
 
 .chatboard .chatboard-wrapper:nth-child(4n + 1) {
 	background-image: url("../assets/home-page/assets/3.png");
-	transform: translateX(-4em);
+	transform: translateX(-5em);
 	background-size: contain;
 	background-repeat: no-repeat;
 	width: 50%;
@@ -685,7 +686,7 @@ body {
 
 .chatboard .chatboard-wrapper:nth-child(4n + 2) {
 	background-image: url("../assets/home-page/assets/4.png");
-	transform: translateX(4em);
+	transform: translateX(5em);
 	background-size: contain;
 	background-repeat: no-repeat;
 	width: 50%;
@@ -725,22 +726,22 @@ body {
 
 @media screen and (max-width: 1580px) {
 	.chatboard .chatboard-wrapper:nth-child(4n + 3) {
-		transform: translateX(-2em);
+		transform: translateX(-5em);
 		width: 57%;
 	}
 
 	.chatboard .chatboard-wrapper:nth-child(4n) {
-		transform: translateX(2em);
+		transform: translateX(5em);
 		width: 57%;
 	}
 
 	.chatboard .chatboard-wrapper:nth-child(4n + 1) {
-		transform: translateX(-2em);
+		transform: translateX(-5em);
 		width: 57%;
 	}
 
 	.chatboard .chatboard-wrapper:nth-child(4n + 2) {
-		transform: translateX(2em);
+		transform: translateX(5em);
 		width: 57%;
 	}
 
@@ -945,22 +946,22 @@ body {
 	}
 
 	.chatboard .chatboard-wrapper:nth-child(4n + 3) {
-		transform: translateX(-2em);
+		transform: translateX(-5em);
 		width: 75%;
 	}
 
 	.chatboard .chatboard-wrapper:nth-child(4n) {
-		transform: translateX(2em);
+		transform: translateX(5em);
 		width: 75%;
 	}
 
 	.chatboard .chatboard-wrapper:nth-child(4n + 1) {
-		transform: translateX(-2em);
+		transform: translateX(-5em);
 		width: 75%;
 	}
 
 	.chatboard .chatboard-wrapper:nth-child(4n + 2) {
-		transform: translateX(2em);
+		transform: translateX(5em);
 		width: 75%;
 	}
 
@@ -1021,22 +1022,22 @@ body {
 	}
 
 	.chatboard .chatboard-wrapper:nth-child(4n + 3) {
-		transform: translateX(-2em);
+		transform: translateX(-5em);
 		width: 95%;
 	}
 
 	.chatboard .chatboard-wrapper:nth-child(4n) {
-		transform: translateX(2em);
+		transform: translateX(5em);
 		width: 95%;
 	}
 
 	.chatboard .chatboard-wrapper:nth-child(4n + 1) {
-		transform: translateX(-2em);
+		transform: translateX(-5em);
 		width: 95%;
 	}
 
 	.chatboard .chatboard-wrapper:nth-child(4n + 2) {
-		transform: translateX(2em);
+		transform: translateX(5em);
 		width: 95%;
 	}
 

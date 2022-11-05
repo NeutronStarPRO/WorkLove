@@ -1,29 +1,26 @@
-import React, { useState, useContext, useEffect } from "react";
-import { post_service } from "../../declarations/post_service";
+import React, { useState, useContext, useEffect } from "react"
+import { post_service } from "../../declarations/post_service"
 
 
-
-const AppContext = React.createContext();
+const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
 
     const [messages, setMessages] = useState([])
 
     const loadMessage = async () => {
-
         try {
             const search = {
                 page_num: 0,
                 page_size: 100,
                 user_id: "",
-                text: ""
+                text: "",
             };
             const res = await post_service.query_posts(search)
             const messages = res.Ok.data
             setMessages(messages)
-            console.log(messages);
         } catch (error) {
-            console.log(error);
+            console.log(error)
         }
 
     }
@@ -38,7 +35,6 @@ const AppProvider = ({ children }) => {
         else if (hours >= 1) return (hours === 1 ? hours + ' hr' : hours + ' hrs')
         else return (mins === 1 ? mins + ' min' : mins + ' mins')
     }
-
 
     useEffect(() => {
         loadMessage()

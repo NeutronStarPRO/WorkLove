@@ -4,6 +4,7 @@ import hearts from "../../assets/mint-page/img/3heart.png"
 import ringNFT from "../../assets/mint-page/img/ring-nft.png"
 import heartArrow from "../../assets/mint-page/img/heart-arrow.png"
 import { AiOutlineCopy } from "react-icons/ai"
+import { getPicture } from "../../../declarations/photo"
 
 const Card = ({ receiver, text, code, sender }) => {
 
@@ -12,12 +13,12 @@ const Card = ({ receiver, text, code, sender }) => {
     const date = new Date()
     const options = { year: 'numeric', month: 'long', day: 'numeric' }
     const today = date.toLocaleDateString("en-US", options)
-    const [alert, setAlert] = useState(false);
+    const [alert, setAlert] = useState(false)
 
     useEffect(() => {
-        const timeout = setTimeout(() => setAlert(false), 1000);
-        return () => clearTimeout(timeout);
-    }, [alert]);
+        const timeout = setTimeout(() => setAlert(false), 1000)
+        return () => clearTimeout(timeout)
+    }, [alert])
 
     return (
 
@@ -29,7 +30,7 @@ const Card = ({ receiver, text, code, sender }) => {
             <div className="contract-wrapper" id="wrapper-hover">
                 <div className="text-box">
                     <div className="show-NFT">
-                        <img src={ringNFT} alt="" />
+                        <img id="imgPre" src={ringNFT} alt="You have no img."/>
                     </div>
                     <div className="right-box">
                         <div className="share-btn">

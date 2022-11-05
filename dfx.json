@@ -14,6 +14,10 @@
       "main": "src/hackthon/main.mo",
       "type": "motoko"
     },
+    "photo": {
+      "main": "src/motoko_backend/photo/Main.mo",
+      "type": "motoko"
+    },
     "hackthon_assets": {
       "dependencies": [
         "hackthon"

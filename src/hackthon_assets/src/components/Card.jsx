@@ -4,6 +4,7 @@ import hearts from "../../assets/mint-page/img/3heart.png"
 import ringNFT from "../../assets/mint-page/img/ring-nft.png"
 import heartArrow from "../../assets/mint-page/img/heart-arrow.png"
 import { AiOutlineCopy } from "react-icons/ai"
+import { getPicture } from "../../../declarations/photo"
 
 const Card = ({ receiver, text, code, sender }) => {
 
@@ -29,7 +30,7 @@ const Card = ({ receiver, text, code, sender }) => {
             <div className="contract-wrapper" id="wrapper-hover">
                 <div className="text-box">
                     <div className="show-NFT">
-                        <img src={ringNFT} alt="" />
+                        <img id="imgPre" src={ringNFT} alt="You have no img."/>
                     </div>
                     <div className="right-box">
                         <div className="share-btn">

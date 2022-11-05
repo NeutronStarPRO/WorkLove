@@ -88,7 +88,8 @@ function Mint() {
                     // 此处拿到的已经是 base64 的图片了,可以赋值做相应的处理
                     console.log(e.target.result) 
                     // 拿到后端返回的图片 id
-                    picId = photo.savePic(e.target.result)
+                    picId = photo.savePic(e.target.result, blob) // 报错
+                    console.log("picId:", picId)
                 }
                 oFileReader.readAsDataURL(blob)
             }
@@ -96,7 +97,11 @@ function Mint() {
         xhr.send();
     }
 
-    
+    // 解除提交限制
+    if (picId != null) {
+        console.log("已解除提交限制")
+        document.getElementById(subPost).disabled = false
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -229,7 +234,7 @@ function Mint() {
 
                             </div>
                             {/* sub按钮 */}
-                            <button className="btn-submit" >Submit</button>
+                            <button id="subPost" className="btn-submit" disabled>Submit</button>
                         </form>
                     </div>
 

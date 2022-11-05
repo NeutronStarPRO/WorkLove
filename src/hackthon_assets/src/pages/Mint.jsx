@@ -18,7 +18,7 @@ function Mint() {
     const shortenedName = `${user.substring(0, 6)} ... ${user.substring(user.length - 6)}`
     const userA = user.match(/\d/g).join('')
     const userB = userA.substring(3, 5)
-    const picId = null
+    var picId
 
     // ----- to be removed when live
     const userId = Principal.fromText('r7inp-6aaaa-aaaaa-aaabq-cai')
@@ -29,23 +29,35 @@ function Mint() {
 
 
 
+    function limitFileSize(file, limitSize) {
+        var arr = ["KB", "MB", "GB"]
+        var limit = limitSize.toUpperCase();
+        var limitNum = 0;
+        for (var i = 0; i < arr.length; i++) {
+            var leval = limit.indexOf(arr[i]);
+            if (leval > -1) {
+                limitNum = parseInt(limit.substr(0, leval)) * Math.pow(1024, (i + 1))
+                break
+            }
+        }
+        if (file.size > limitNum) {
+            return false
+        }
+        return true
+    }
     // 检查图片类型,并选择图片后传给下一页展示
     function checkImg(sourceId, targetId) {
-        var fileType = document.getElementById(sourceId).files[0].type
+        var file = document.getElementById(sourceId).files[0]
         var imgUrl = getFileUrl(sourceId)
-        // size 单位为 M ，例如 2 ，则为限制上传 2M 以内的图片
-        const size = 2
-        const isLtSize = sourceId.size / 1024 / 1024 < size
-        if (fileType.indexOf("image/") == -1) {
-            alert("Try again image !")
-            document.getElementById(sourceId).value = ""
-        } else if (!isLtSize) {
-            alert("Image too big! 0MB ~ 2MB")
-            document.getElementById(sourceId).value = ""
-        } else {
+        const isltSize = limitFileSize(file, '2MB')
+        if (isltSize) {
             getBase64(imgUrl)
-            var imgPre = document.getElementById(targetId)
+            const imgPre = document.getElementById(targetId)
             imgPre.src = imgUrl
+        } else {
+            alert("Image too big! 0MB ~ 2MB")
+            console.log("Image too big! 0MB ~ 2MB")
+            document.getElementById(sourceId).value = ""
         }
     }
     // 拿到 input 选择文件的本地地址
@@ -74,7 +86,7 @@ function Mint() {
                 let oFileReader = new FileReader()
                 oFileReader.onloadend = function(e){
                     // 此处拿到的已经是 base64 的图片了,可以赋值做相应的处理
-                    console.log(e.target.result)
+                    console.log(e.target.result) 
                     // 拿到后端返回的图片 id
                     picId = photo.savePic(e.target.result)
                 }
@@ -84,7 +96,7 @@ function Mint() {
         xhr.send();
     }
 
-
+    
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -115,7 +127,7 @@ function Mint() {
                 "user_other_id": "",
                 "text": text,
                 "user_other_name": name,
-                "picId":picId,
+                "pic_id":picId,
             }
 
             // ----- recover when live

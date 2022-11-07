@@ -1520,12 +1520,13 @@ svg#heart {
 .NFT-content input {
 	opacity: 0;
 	position: absolute;
-	left: 26%;
+	left: -19%;
     top: 29%;
+	cursor: pointer;
 }
 
-.NFT-content input:hover {
-	cursor: pointer !important;
+#imgOne {
+	cursor: pointer;
 }
 
 .NFT-content .explore {

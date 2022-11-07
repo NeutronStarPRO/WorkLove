@@ -104,7 +104,8 @@ function Mint() {
                     console.log("picId:", picId)
                     // 提交限制
                     if (picId = null) {
-                        console.log("已限制提交")
+                        console.log("没有picId, 已限制提交")
+                        alert("photo upload false! Try again!")
                         document.getElementById(subPost).disabled = true
                     }
                 }
@@ -112,7 +113,6 @@ function Mint() {
             }
         }
         xhr.send()
-        
     }
     
 

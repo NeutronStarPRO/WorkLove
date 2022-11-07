@@ -93,14 +93,14 @@ function Mint() {
                     let name = imgUrl.name;
                     const index = name.lastIndexOf('.');
                     let extend = index >= 0 ? name.substring(index) : ''; // 从名字取
-                    if (!extend) extend = '.' + file.type.split('/')[1]; // 从文件类型取
-                    name = file.uid + extend;
+                    if (!extend) extend = '.' + imgUrl.type.split('/')[1]; // 从文件类型取
+                    name = imgUrl.uid + extend;
                     let blobPic = {
                         content : e.target.result,
                         fileType : blob.type
                     }
                     // 提交图片,拿到后端返回的图片 id
-                    picId = photo.savePic(blobPic, "1", "1", "")
+                    picId = photo.savePic(blobPic, "", name, "1")
                     console.log("picId:", picId)
                     // 提交限制
                     if (picId = null) {

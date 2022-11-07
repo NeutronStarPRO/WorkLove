@@ -9,6 +9,7 @@ import { Auth } from '../components/Auth'
 import { loading, switchover, noNFT } from './mint-main'
 import { idlFactory, canisterId, createActor } from "../../../declarations/post_service"
 import { photo } from "../../../declarations/photo"
+import { type } from 'os'
 
 function Mint() {
     const [name, setName] = useState("")
@@ -18,7 +19,6 @@ function Mint() {
     const shortenedName = `${user.substring(0, 6)} ... ${user.substring(user.length - 6)}`
     const userA = user.match(/\d/g).join('')
     const userB = userA.substring(3, 5)
-    // var blobPic
     var picId
 
     // ----- to be removed when live
@@ -85,21 +85,30 @@ function Mint() {
                 // 得到一个 blob 对象
                 var blob = this.response
                 console.log("blob:", blob)
-                // 提交图片,拿到后端返回的图片 id
-                picId = photo.savePic(blob, "", "", "")
-                console.log("picId:", picId)
-                // 解除提交限制
-                if (picId != null) {
-                    console.log("已解除提交限制")
-                    document.getElementById(subPost).disabled = false
-                }
+                
                 let oFileReader = new FileReader()
                 oFileReader.onloadend = function(e) {
                     // 此处拿到的已经是 base64 的图片了,可以赋值做相应的处理
                     console.log(e.target.result)
-                    // blobPic = e.target.result
+                    let name = imgUrl.name;
+                    const index = name.lastIndexOf('.');
+                    let extend = index >= 0 ? name.substring(index) : ''; // 从名字取
+                    if (!extend) extend = '.' + file.type.split('/')[1]; // 从文件类型取
+                    name = file.uid + extend;
+                    let blobPic = {
+                        content : e.target.result,
+                        fileType : blob.type
+                    }
+                    // 提交图片,拿到后端返回的图片 id
+                    picId = photo.savePic(blobPic, "1", "1", "")
+                    console.log("picId:", picId)
+                    // 提交限制
+                    if (picId = null) {
+                        console.log("已限制提交")
+                        document.getElementById(subPost).disabled = true
+                    }
                 }
-                oFileReader.readAsDataURL(blob)
+                // oFileReader.readAsDataURL(blob)
             }
         }
         xhr.send()
@@ -240,7 +249,7 @@ function Mint() {
 
                             </div>
                             {/* sub按钮 */}
-                            <button id="subPost" className="btn-submit" disabled>Submit</button>
+                            <button id="subPost" className="btn-submit">Submit</button>
                         </form>
                     </div>
 

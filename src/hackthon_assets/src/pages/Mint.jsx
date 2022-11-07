@@ -232,13 +232,13 @@ function Mint() {
                                                 multiple
                                             />
                                             <div className="explore">explore 
-                                                <svg t="1663486927256" className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1485" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <svg t="1663486927256" className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1485" xmlnsXlink="http://www.w3.org/1999/xlink">
                                                     <path d="M436.053333 308.053333a32 32 0 0 1 45.226667 0L685.226667 512l-203.946667 203.946667a32 32 0 1 1-45.226667-45.226667L594.773333 512l-158.72-158.72a32 32 0 0 1 0-45.226667z" p-id="1486" fill="#ffffff">
                                                     </path>
                                                 </svg>
                                             </div>
                                             <div className="create">create 
-                                                <svg t="1663486927256" className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1485" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <svg t="1663486927256" className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1485" xmlnsXlink="http://www.w3.org/1999/xlink">
                                                     <path d="M436.053333 308.053333a32 32 0 0 1 45.226667 0L685.226667 512l-203.946667 203.946667a32 32 0 1 1-45.226667-45.226667L594.773333 512l-158.72-158.72a32 32 0 0 1 0-45.226667z" p-id="1486" fill="#ffffff">
                                                     </path>
                                                 </svg>

@@ -13,12 +13,12 @@ const Card = ({ receiver, text, code, sender }) => {
     const date = new Date()
     const options = { year: 'numeric', month: 'long', day: 'numeric' }
     const today = date.toLocaleDateString("en-US", options)
-    const [alert, setAlert] = useState(false);
+    const [alert, setAlert] = useState(false)
 
     useEffect(() => {
-        const timeout = setTimeout(() => setAlert(false), 1000);
-        return () => clearTimeout(timeout);
-    }, [alert]);
+        const timeout = setTimeout(() => setAlert(false), 1000)
+        return () => clearTimeout(timeout)
+    }, [alert])
 
     return (
 
@@ -37,7 +37,7 @@ const Card = ({ receiver, text, code, sender }) => {
                                         <a href="#">
                                             <svg width="50" height="50" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <g filter="url(#filter0_d_3328_731)">
-                                                    <path d="M20.5 4.8125L24.625 8.9375M20.5 19.9375V4.8125V19.9375ZM20.5 4.8125L16.375 8.9375L20.5 4.8125Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M20.5 4.8125L24.625 8.9375M20.5 19.9375V4.8125V19.9375ZM20.5 4.8125L16.375 8.9375L20.5 4.8125Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                                                     <path d="M26 26.125H15C13.6438 26.125 13.2058 26.1185 12.8722 26.0657C10.8129 25.7396 9.1979 24.1245 8.87175 22.0653C8.81891 21.7316 8.8125 21.2937 8.8125 19.9375C8.8125 18.5813 8.81891 18.1434
                                                      8.87175 17.8097C9.1979 15.7505 10.8129 14.1354 12.8722 13.8093C13.2058 13.7565 13.6438 13.75 15 13.75H15.3437C15.9133 13.75 16.375 13.2883 16.375 12.7187C16.375 12.1492 15.9133 11.6875 15.3437
                                                       11.6875H15C13.7226 11.6875 13.0839 11.6875 12.5495 11.7721C9.60776 12.2381 7.30058 14.5453 6.83464 17.487C6.75 18.0214 6.75 18.6601 6.75 19.9375C6.75 21.2149 6.75 21.8536 6.83464 22.388C7.30058
@@ -48,8 +48,8 @@ const Card = ({ receiver, text, code, sender }) => {
                                                          17.8097C32.181 18.1434 32.1875 18.5813 32.1875 19.9375C32.1875 21.2937 32.181 21.7316 32.1282 22.0653C31.8021 24.1245 30.187 25.7396 28.1278 26.0657C27.7941 26.1185 27.3562 26.125 26 26.125Z" fill="white"/>
                                                 </g>
                                                 <defs>
-                                                    <filter id="filter0_d_3328_731" x="0" y="0" width="41" height="41" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                                    <filter id="filter0_d_3328_731" x="0" y="0" width="41" height="41" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                                                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                                                         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
                                                         <feOffset dy="4"/>
                                                         <feGaussianBlur stdDeviation="2"/>
@@ -63,7 +63,7 @@ const Card = ({ receiver, text, code, sender }) => {
                                         </a>
                                         <div className="share-hover">
                                             {alert && <p className="alert">
-                                                <svg t="1665155564581" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2535" width="30" height="30">
+                                                <svg t="1665155564581" className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2535" width="30" height="30">
                                                     <path d="M512 1024C229.248 1024 0 794.752 0 512S229.248 0 512 0s512 229.248 512 512-229.248 512-512 512z m-114.176-310.954667a53.333333 53.333333 0 0 0 75.434667 0l323.328-323.328a53.333333 53.333333 0 1 0-75.434667-75.434666l-287.914667 283.306666-128.853333-128.853333a53.333333 53.333333 0 1 0-75.434667 75.434667l168.874667 168.874666z" fill="#1afa29" p-id="2536">
                                                     </path>
                                                 </svg>&nbsp;

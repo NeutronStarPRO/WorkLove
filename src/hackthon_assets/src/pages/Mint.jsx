@@ -18,6 +18,7 @@ function Mint() {
     const shortenedName = `${user.substring(0, 6)} ... ${user.substring(user.length - 6)}`
     const userA = user.match(/\d/g).join('')
     const userB = userA.substring(3, 5)
+    // var blobPic
     var picId
 
     // ----- to be removed when live
@@ -29,6 +30,7 @@ function Mint() {
 
 
 
+    // 检查图片类型
     function limitFileSize(file, limitSize) {
         var arr = ["KB", "MB", "GB"]
         var limit = limitSize.toUpperCase();
@@ -65,9 +67,9 @@ function Mint() {
         var url
         if (navigator.userAgent.indexOf("MSIE")>=1) { // IE
             url = document.getElementById(sourceUrl).value
-        } else if(navigator.userAgent.indexOf("Firefox")>0) { // Firefox
+        } else if (navigator.userAgent.indexOf("Firefox")>0) { // Firefox
             url = window.URL.createObjectURL(document.getElementById(sourceUrl).files.item(0))
-        } else if(navigator.userAgent.indexOf("Chrome")>0) { // Chrome
+        } else if (navigator.userAgent.indexOf("Chrome")>0) { // Chrome
             url = window.URL.createObjectURL(document.getElementById(sourceUrl).files.item(0))
         }
         return url
@@ -78,30 +80,34 @@ function Mint() {
         var xhr = new XMLHttpRequest()
         xhr.open("get", imgUrl, true)
         xhr.responseType = "blob"
-        xhr.onload = function(){
-            if(this.status == 200){
+        xhr.onload = function() {
+            if (this.status == 200) {
                 // 得到一个 blob 对象
                 var blob = this.response
-                console.log("blob", blob)
+                console.log("blob:", blob)
+                // 提交图片,拿到后端返回的图片 id
+                picId = photo.savePic(blob, "", "", "")
+                console.log("picId:", picId)
+                // 解除提交限制
+                if (picId != null) {
+                    console.log("已解除提交限制")
+                    document.getElementById(subPost).disabled = false
+                }
                 let oFileReader = new FileReader()
-                oFileReader.onloadend = function(e){
+                oFileReader.onloadend = function(e) {
                     // 此处拿到的已经是 base64 的图片了,可以赋值做相应的处理
-                    console.log(e.target.result) 
-                    // 拿到后端返回的图片 id
-                    picId = photo.savePic(e.target.result, blob) // 报错
-                    console.log("picId:", picId)
+                    console.log(e.target.result)
+                    // blobPic = e.target.result
                 }
                 oFileReader.readAsDataURL(blob)
             }
         }
-        xhr.send();
+        xhr.send()
+        
     }
+    
 
-    // 解除提交限制
-    if (picId != null) {
-        console.log("已解除提交限制")
-        document.getElementById(subPost).disabled = false
-    }
+
 
     const handleSubmit = async (e) => {
         e.preventDefault()
